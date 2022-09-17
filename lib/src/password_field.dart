@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'logic.dart';
 
 
-class PasswordField extends StatefulWidget {
+class PasswordCipher extends StatefulWidget {
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
   final VoidCallback? onEditingComplete;
@@ -45,7 +44,7 @@ class PasswordField extends StatefulWidget {
   final double? passwordIconSize;
   final double? encryptIconSize;
 
-  const PasswordField({
+  const PasswordCipher({
     Key? key,
     this.controller,
     this.validator,
@@ -90,17 +89,17 @@ class PasswordField extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<PasswordField> createState() => _PasswordFieldState();
+  State<PasswordCipher> createState() => _PasswordCipherState();
 }
 
-class _PasswordFieldState extends State<PasswordField> {
+class _PasswordCipherState extends State<PasswordCipher> {
   late bool focused = false;
   late bool passwordVisible;
   late bool isEncrypted;
 
   @override
   void initState() {
-    passwordVisible = false;
+    passwordVisible = true;
     isEncrypted = false;
     super.initState();
   }
