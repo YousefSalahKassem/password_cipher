@@ -1,39 +1,74 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## Password Cipher
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Password Cipher is an encryption - decryption password using caesar cipher encryption.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+1: It supports Android, Ios and Web platform.
+
+2: Have an options like text field in addition visibility and encryption.
+
+3: Password Cipher is now hidden by default. You can show it by clicking on the eye icon.
+
+4: Have an option to encrypt the password using caesar cipher encryption by clicking on the lock icon.
+
+5: Have an option to decrypt the password by clicking on the lock icon again.
+
+6: Have an option to encrypt for characters , numbers and special characters
+
+https://user-images.githubusercontent.com/91211054/190849738-205d0496-6feb-486f-a53c-741b791e96f9.mp4
+
+
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+The Caesar Cipher technique is one of the earliest and simplest methods of encryption technique. It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced by a letter with a fixed number of positions down the alphabet. For example with a shift of 1, A would be replaced by B, B would become C, and so on. The method is apparently named after Julius Caesar, who apparently used it to communicate with his officials. 
+
+Thus to cipher a given text we need an integer value, known as a shift which indicates the number of positions each letter of the text has been moved down. 
+The encryption can be represented using modular arithmetic by first transforming the letters into numbers, according to the scheme, A = 0, B = 1,…, Z = 25. Encryption of a letter by a shift n can be described mathematically as. 
+
+E_n(x)=(x+n)mod\ 26       
+(Encryption Phase with shift n)
+
+D_n(x)=(x-n)mod\ 26       
+(Decryption Phase with shift n)
+
+![ceaserCipher](https://user-images.githubusercontent.com/91211054/190849882-e8d91ad6-8254-49b6-86d8-a516517911a6.png)
+
+
+
+
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Example for Password Cipher package and how to use it.
 
 ```dart
-const like = 'sample';
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final controller = TextEditingController();
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: Scaffold(
+          body: Center(
+          child: Column(
+          children: [
+            PasswordCipher(
+              controller: controller,
+              passwordIconColor: Colors.teal,
+              encryptIconColor: Colors.teal,
+            ),
+          ],
+      ))),
+    );
+  }
+}
+
 ```
 
-## Additional information
+## References
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+1: geeks for geeks: https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/
