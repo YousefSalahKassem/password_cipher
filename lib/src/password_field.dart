@@ -121,9 +121,9 @@ class _PasswordCipherState extends State<PasswordCipher> {
             setState(() {
               isEncrypted = !isEncrypted;
               if (isEncrypted) {
-                widget.controller!.text = Logic().caesarCipherDecryption(widget.controller!.text,);
+                widget.controller!.text = Logic().vigenereCipherDecryption(widget.controller!.text,);
               } else {
-                widget.controller!.text = Logic().caesarCipherEncryption(widget.controller!.text);
+                widget.controller!.text = Logic().vigenereCipherEncryption(widget.controller!.text);
               }
             });
           },
